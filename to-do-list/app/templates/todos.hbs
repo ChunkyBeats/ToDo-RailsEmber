@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    {{input type="text" value=newTodoTitle action="createTodo" placeholder="New Todo"}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      {{#each todo in model.todos}}
+       <li>
+          {{todo.title}}
+           <a href="#" {{action "deleteTodo" todo.id}}>Delete</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
